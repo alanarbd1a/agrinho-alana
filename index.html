@@ -181,30 +181,6 @@
         </div>
     </footer>
     
-    <script>
-        // Interatividade simples
-        document.addEventListener('DOMContentLoaded', function() {
-            const features = document.querySelectorAll('.feature');
-            
-            features.forEach(feature => {
-                feature.addEventListener('click', function() {
-                    this.style.backgroundColor = '#f0fff0';
-                    setTimeout(() => {
-                        this.style.backgroundColor = 'white';
-                    }, 500);
-                });
-            });
-            
-            // Simulação de cadastro no projeto
-            const ctaButton = document.querySelector('.cta-button');
-            ctaButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                const name = prompt('Ótimo que quer participar! Qual seu nome?');
-                if (name) {
-                    alert(`Obrigado, ${name}! Em breve entraremos em contato com mais informações.`);
-                }
-            });
-        });
-    </script>
+    
 </body>
 </html>
