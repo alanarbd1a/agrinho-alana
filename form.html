@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Campo-Cidade</title>
+    <style>
+        /* Reset e Estilos Gerais */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f0f7e6;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        /* Container Principal */
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Cabeçalho */
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-header h1 {
+            color: #2e7d32;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .form-header p {
+            color: #666;
+        }
+        
+        /* Divisor Temático */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 25px 0;
+            color: #4caf50;
+        }
+        
+        .divider-line {
+            flex-grow: 1;
+            height: 1px;
+            background-color: #ddd;
+        }
+        
+        .divider-text {
+            padding: 0 15px;
+            font-weight: bold;
+        }
+        
+        /* Estilos do Formulário */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2e7d32;
+        }
+        
+        .required-field::after {
+            content: " *";
+            color: #e53935;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #4caf50;
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+            outline: none;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Grupos de Opções */
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .radio-option,
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-option input,
+        .checkbox-option input {
+            margin-right: 10px;
+        }
+        
+        /* Select Múltiplo */
+        select[multiple] {
+            height: auto;
+            min-height: 100px;
+            padding: 5px;
+        }
+        
+        select[multiple] option {
+            padding: 8px 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* Botão de Envio */
+        .submit-btn {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #3d8b40;
+        }
+        
+        /* Rodapé do Formulário */
+        .form-footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 20px;
+            }
+            
+            .form-header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Festejando a Conexão Campo-Cidade</h1>
+            <p>Junte-se a nós para fortalecer os laços entre o rural e o urbano</p>
+        </div>
+        
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="name" class="required-field">Nome completo</label>
+                <input type="text" id="name" name="name" required placeholder="Digite seu nome completo">
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="required-field">E-mail</label>
+                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Telefone/WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000">
+            </div>
+            
+            <div class="divider">
+                <div class="divider-line"></div>
+                <div class="divider-text">Sua conexão</div>
+                <div class="divider-line"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="origin" class="required-field">Você vem principalmente do:</label>
+                <select id="origin" name="origin" required>
+                    <option value="" disabled selected>Selecione sua origem</option>
+                    <option value="city">Área urbana (cidade)</option>
+                    <option value="countryside">Área rural (campo)</option>
+                    <option value="both">Tenho vivência em ambos</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="required-field">Como você se identifica?</label>
+                <div class="option-group">
+                    <div class="radio-option">
+                        <input type="radio" id="identity-producer" name="identity" value="producer" required>
+                        <label for="identity-producer">Produtor rural/agricultor</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="identity-consumer" name="identity" value="consumer">
+                        <label for="identity-consumer">Consumidor urbano</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="identity-student" name="identity" value="student">
+                        <label for="identity-student">Estudante/pesquisador</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="identity-other" name="identity" value="other">
+                        <label for="identity-other">Outro</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Quais formas de conexão você já vivenciou?</label>
+                <div class="option-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="experience-fair" name="experience" value="fair">
+                        <label for="experience-fair">Feiras de produtores</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="experience-tourism" name="experience" value="tourism">
+                        <label for="experience-tourism">Turismo rural</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="experience-delivery" name="experience" value="delivery">
+                        <label for="experience-delivery">Compras diretas do produtor</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="experience-none" name="experience" value="none">
+                        <label for="experience-none">Ainda não tive experiências</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="divider">
+                <div class="divider-line"></div>
+                <div class="divider-text">Seu interesse</div>
+                <div class="divider-line"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="interests">Quais aspectos te interessam? (Selecione até 3)</label>
+                <select id="interests" name="interests" multiple>
+                    <option value="food">Alimentação saudável</option>
+                    <option value="culture">Cultura e tradições</option>
+                    <option value="economy">Economia solidária</option>
+                    <option value="technology">Tecnologia agrícola</option>
+                    <option value="sustainability">Sustentabilidade</option>
+                    <option value="education">Educação ambiental</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="participation">Como gostaria de participar?</label>
+                <select id="participation" name="participation">
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="volunteer">Como voluntário</option>
+                    <option value="participant">Participante de eventos</option>
+                    <option value="producer">Produtor/expositor</option>
+                    <option value="supporter">Apoiador do projeto</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Compartilhe suas experiências ou expectativas:</label>
+                <textarea id="message" name="message" placeholder="Conte como você vivencia a conexão campo-cidade..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="newsletter" name="newsletter" checked>
+                    <label for="newsletter">Desejo receber informações sobre o projeto</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms" class="required-field">Li e aceito os termos de participação</label>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Enviar minha participação</button>
+        </form>
+        
+        <div class="form-footer">
+            <p>Projeto "Festejando a Conexão Campo-Cidade" - Construindo pontes entre comunidades</p>
+        </div>
+    </div>
+</body>
+</html>
